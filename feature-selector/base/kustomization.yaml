@@ -3,8 +3,15 @@ resources:
 - deployment.yaml
 
 configMapGenerator:
+# Auto generate a configmap with name `conf`. TODO what is `literals`?. Looks like it is the first data key:val
+
+# The name when it generated will be `con-XXX` TODO not sure how it generate the XXX but it seems to be preserve
+# across the usage of the configmap in this kustomization
+# It might be for all sort of generator, same for secret
 - name: conf
   literals:
+  # literals means generate string as is. Final configmap will be like below in the data section
+  # `main.conf: '| color=cornflower_blue log_level=info'`
     - main.conf=|
         color=cornflower_blue
         log_level=info

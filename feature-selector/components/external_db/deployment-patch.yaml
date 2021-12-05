@@ -1,4 +1,5 @@
 # $EXT_DB/deployment.yaml
+# TODO full list of ops supported
 - op: add
   path: /spec/template/spec/volumes/0
   value:

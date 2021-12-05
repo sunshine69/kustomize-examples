@@ -3,9 +3,15 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
+# path ...
+# could be a file
+# or a folder which contains another kustomization.yaml file which eventualy points to a yaml file
+# parse it as k8s object
   - ../../base
 
 components:
+# path points to a directory with another kustomization.yaml file
+# For patching the resources declared above
   - ../../components/external_db
   #- ../../components/ldap
   - ../../components/recaptcha
